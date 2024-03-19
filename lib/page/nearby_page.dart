@@ -29,7 +29,7 @@ class NearbyPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide.none,
                     ),
-                    hintText: 'Search by name or city',
+                    hintText: 'Search by name or the city',
                     hintStyle:
                         const TextStyle(color: Colors.grey, fontSize: 14),
                     contentPadding:
