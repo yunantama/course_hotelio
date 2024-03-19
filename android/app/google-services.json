@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "151389024285",
+    "project_id": "course-hotelio-68ee8",
+    "storage_bucket": "course-hotelio-68ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151389024285:android:e343993f5013065aa656f4",
+        "android_client_info": {
+          "package_name": "com.new.flutnann.hotelio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKwCV_hM9axPHjvWN_oAhRlcJQzmx9nQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
