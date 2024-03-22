@@ -1,7 +1,8 @@
+// ignore_for_file: camel_case_types
+
 import 'package:course_hotelio/config/app_assets.dart';
 import 'package:course_hotelio/config/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class NearbyPage extends StatelessWidget {
   const NearbyPage({super.key});
@@ -9,55 +10,74 @@ class NearbyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [
-        const SizedBox(height: 24),
-        const header(),
-        const SizedBox(height: 24),
-        Container(
-          height: 45,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Stack(
-            children: [
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Search by name or the city',
-                    hintStyle:
-                        const TextStyle(color: Colors.grey, fontSize: 14),
-                    contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  ),
-                ),
-              ),
-              Material(
-                color: AppColor.secondary,
-                borderRadius: BorderRadius.circular(45),
-                child: SizedBox(
-                  height: 45,
-                  width: 45,
-                  child: ImageIcon(
-                    AssetImage(AppAssets.iconSearch),
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+      children: const [
+        SizedBox(height: 24),
+        header(),
+        SizedBox(height: 20),
+        searchField(),
+        SizedBox(height: 30),
       ],
     );
   }
 }
 
-// ignore: camel_case_types
+class searchField extends StatelessWidget {
+  const searchField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 45,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Stack(
+        children: [
+          Container(
+            height: 45,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30), color: Colors.white),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none,
+                ),
+                hintText: 'Search by name or the city',
+                hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                // prefixIcon: const Icon(Icons.search),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Material(
+              color: AppColor.secondary,
+              borderRadius: BorderRadius.circular(45),
+              child: InkWell(
+                onTap: () {},
+                borderRadius: BorderRadius.circular(45),
+                child: const SizedBox(
+                  height: 45,
+                  width: 45,
+                  child: Center(
+                    child: ImageIcon(
+                      AssetImage(AppAssets.iconSearch),
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class header extends StatelessWidget {
   const header({
     super.key,
@@ -88,6 +108,7 @@ class header extends StatelessWidget {
                       fontWeight: FontWeight.w900,
                     ),
               ),
+              const SizedBox(height: 6),
               const Text(
                 '100 Hotels',
                 style: TextStyle(color: Colors.grey, fontSize: 12),
