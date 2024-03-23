@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
         if (cHome.indexPage == 1) {
           return const Center(child: Text('History'));
         }
-        return const NearbyPage();
+        return NearbyPage();
       }),
       bottomNavigationBar: Obx(() {
         return Material(
